@@ -83,7 +83,7 @@ public class DiscussionView extends Panel implements View {
                 getUI().addWindow(new DiscussionBoardEntryWindow(DiscussionView.this));
             }
         });
-        return null;
+        return newEntry;
     }
 
     private Component buildMainContent() {

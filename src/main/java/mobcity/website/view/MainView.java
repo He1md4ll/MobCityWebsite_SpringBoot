@@ -1,24 +1,20 @@
 package mobcity.website.view;
 
 import com.vaadin.ui.ComponentContainer;
-import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
-import mobcity.website.MobCityNavigator;
+
 
 
 public class MainView extends HorizontalLayout {
-    public MainView() {
+
+    public MainView(ComponentContainer mainContentWrapper) {
+        super();
         setSizeFull();
         addStyleName("mainview");
 
         addComponent(new MobCityMenu());
+        addComponent(mainContentWrapper);
 
-        ComponentContainer content = new CssLayout();
-        content.addStyleName("view-content");
-        content.setSizeFull();
-        addComponent(content);
-        setExpandRatio(content, 1.0f);
-
-        new MobCityNavigator(content);
+        setExpandRatio(mainContentWrapper, 1.0f);
     }
 }
